@@ -2,9 +2,15 @@
 
 This is a repo about building a simulated city. Now it only contains a roadnetwork, some traffic lights at crossroads, some automatic generated pedestrains and cars. Some basic traffic rules are used, such as green light means go and red light means stop. There are no buildings in this enviroment, because I do not find smaller building assets, and I do not want this repo too large just because the building models are too large.  
 
+## Requirement
+
+ml-agents
+numpy
+Python 3+
+
 ## Enviroment
 
-### Roadnetwork
+### Roads
 
 There are three roads along east-west direction, two of them have a length of 4 km, the other one has a length of 2 km. And four roads along north-south direction, two of them have a length of 3 kilometers, the other two roads have a length of 2 km. They cross with each other and form 10 crossroads. They are all four lanes road, two directions.  
 
@@ -35,13 +41,13 @@ There are 5 cameras on the top of the Agent car, three of them face front and th
 
 ### Action space
 
-The action space is a three dimension vector(I use numpy array), it is (motorForwardOrBackward, turnLeftOrRight, isBrake).  
+The action space is a three dimension vector, it is (motorForwardOrBackward, turnLeftOrRight, isBrake).  
 
-motorForwardOrBackward: This means the scale of the torque applying to the car makes it move forward or backward, and has a range of (-1, 1). The value is the scale to the max torque. So 0.7 means there is a 0.7 times of the maxTorque applying on the car to make it moving forward, and -0.3  means there is a 0.3 times of the maxTorque applying on the car to make it moving backward.
+**motorForwardOrBackward**: This means the scale of the torque applying to the car makes it move forward or backward, and has a range of (-1, 1). The value is the scale to the max torque. So 0.7 means there is a 0.7 times of the maxTorque applying on the car to make it moving forward, and -0.3  means there is a 0.3 times of the maxTorque applying on the car to make it moving backward.
 
-turnLeftOrRight: This means the scale of the angle the front wheel turning, and has a range of (-1, 1). The value is the scale of the max turning angle(30 degree). So 0.7 means the front wheel is turning right with 21 degree, and -0.3 means the front wheel is turning left with 9 degree.
+**turnLeftOrRight**: This means the scale of the angle the front wheel turning, and has a range of (-1, 1). The value is the scale of the max turning angle(30 degree). So 0.7 means the front wheel is turning right with 21 degree, and -0.3 means the front wheel is turning left with 9 degree.
 
-isBrake: This means brake or not. 1 means brake and 0 means not.
+**isBrake**: This means brake or not. 1 means brake and 0 means not.
 
 ### Reward and done
 

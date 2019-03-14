@@ -4,9 +4,9 @@ This is a repo about building a simulated city. Now it only contains a roadnetwo
 
 ## Requirement
 
-ml-agents
-numpy
-Python 3+
+ml-agents  
+numpy  
+Python 3+  
 
 ## Enviroment
 
